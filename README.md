@@ -1,5 +1,7 @@
 # See It
 
+A visualiser for common data structures and algorithms.
+
 ## Getting Started
 
 First, run the development server:
