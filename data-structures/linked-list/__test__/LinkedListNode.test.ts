@@ -1,6 +1,6 @@
 import { LinkedListNode } from "../LinkedListNode";
 
-describe("LinkedListNode", () => {
+describe("Linked List Node", () => {
   it("should create a list node with a value", () => {
     const node = new LinkedListNode(1);
 
