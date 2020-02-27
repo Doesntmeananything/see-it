@@ -5,7 +5,13 @@ type LinkedListNodeNext = {
   next?: LinkedListNodeValue;
 };
 
+export type LinkedListNodeType = {
+  value: LinkedListNodeValue;
+  next?: LinkedListNodeNext;
+};
+
 export function LinkedListNode(
+  this: LinkedListNodeType,
   value: LinkedListNodeValue,
   next: LinkedListNodeNext = null
 ) {
