@@ -1,4 +1,4 @@
-type LinkedListNodeValue = string | number | {};
+export type LinkedListNodeValue = string | number | {};
 
 type LinkedListNodeNext = LinkedListNodeValue | null;
 
