@@ -1,10 +1,21 @@
-import { LinkedListNode, LinkedListNodeValue } from "./LinkedListNode";
+import {
+  LinkedListNode,
+  LinkedListNodeValue,
+  LinkedListNodeType
+} from "./LinkedListNode";
 
-export function LinkedList() {
+type LinkedList = {
+  head: LinkedListNodeType;
+  tail: LinkedListNodeType;
+  prepend: (value: LinkedListNodeValue) => LinkedList;
+  append: (value: LinkedListNodeValue) => LinkedList;
+};
+
+export function LinkedList(this: LinkedList) {
   this.head = null;
   this.tail = null;
 
-  this.prepend = function(value: LinkedListNodeValue) {
+  this.prepend = function(this: LinkedList, value: LinkedListNodeValue) {
     const newNode = new LinkedListNode(value, this.head);
     this.head = newNode;
 
@@ -13,7 +24,7 @@ export function LinkedList() {
     return this;
   };
 
-  this.append = function(value: LinkedListNodeValue) {
+  this.append = function(this: LinkedList, value: LinkedListNodeValue) {
     const newNode = new LinkedListNode(value);
 
     if (!this.head) {
