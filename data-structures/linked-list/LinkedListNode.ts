@@ -2,7 +2,7 @@ type LinkedListNodeValue = string | number | {};
 
 type LinkedListNodeNext = LinkedListNodeValue | null;
 
-export default function LinkedListNode(
+export function LinkedListNode(
   value: LinkedListNodeValue,
   next: LinkedListNodeNext = null
 ) {
