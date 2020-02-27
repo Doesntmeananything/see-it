@@ -1,6 +1,9 @@
 export type LinkedListNodeValue = string | number | {};
 
-type LinkedListNodeNext = LinkedListNodeValue | null;
+type LinkedListNodeNext = {
+  value: LinkedListNodeValue;
+  next?: LinkedListNodeValue;
+};
 
 export function LinkedListNode(
   value: LinkedListNodeValue,
