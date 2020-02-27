@@ -17,7 +17,7 @@ describe("LinkedListNode", () => {
     expect(node.next).toBeNull();
   });
 
-  it("should link two nodes together", () => {
+  it("should be able to point to the next list node", () => {
     const node2 = new LinkedListNode(2);
     const node1 = new LinkedListNode(1, node2);
 
