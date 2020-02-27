@@ -1,8 +1,8 @@
-import { LinkedListNode } from "../LinkedListNode";
+import { createLinkedListNode } from "../LinkedListNode";
 
 describe("Linked List Node", () => {
   it("should create a list node with a value", () => {
-    const node = new LinkedListNode(1);
+    const node = createLinkedListNode(1);
 
     expect(node.value).toBe(1);
     expect(node.next).toBeNull();
@@ -10,16 +10,15 @@ describe("Linked List Node", () => {
 
   it("should create a list node with an object as a value", () => {
     const nodeValue = { id: 1, description: "test" };
-    const node = new LinkedListNode(nodeValue);
+    const node = createLinkedListNode(nodeValue);
 
-    expect(node.value.id).toBe(1);
-    expect(node.value.description).toBe("test");
+    expect(node.value).toBe(nodeValue);
     expect(node.next).toBeNull();
   });
 
   it("should be able to point to the next list node", () => {
-    const node2 = new LinkedListNode(2);
-    const node1 = new LinkedListNode(1, node2);
+    const node2 = createLinkedListNode(2);
+    const node1 = createLinkedListNode(1, node2);
 
     expect(node1.value).toBe(1);
     expect(node1.next.value).toBe(2);

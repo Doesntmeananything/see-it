@@ -1,20 +1,14 @@
-export type LinkedListNodeValue = string | number | {};
+export type LinkedListNodeValue = { [key: string]: any } | number | string;
 
-type LinkedListNodeNext = {
+export type LinkedListNode = {
   value: LinkedListNodeValue;
-  next?: LinkedListNodeValue;
+  next?: LinkedListNode;
 };
 
-export type LinkedListNodeType = {
-  value: LinkedListNodeValue;
-  next?: LinkedListNodeNext;
-};
-
-export function LinkedListNode(
-  this: LinkedListNodeType,
+export const createLinkedListNode = (
   value: LinkedListNodeValue,
-  next: LinkedListNodeNext = null
-) {
-  this.value = value;
-  this.next = next;
-}
+  next: LinkedListNode = null
+): LinkedListNode => ({
+  value,
+  next
+});

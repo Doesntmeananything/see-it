@@ -1,42 +1,34 @@
 import {
-  LinkedListNode,
+  createLinkedListNode,
   LinkedListNodeValue,
-  LinkedListNodeType
+  LinkedListNode
 } from "./LinkedListNode";
 
 type LinkedList = {
-  head: LinkedListNodeType;
-  tail: LinkedListNodeType;
-  prepend: (value: LinkedListNodeValue) => LinkedList;
-  append: (value: LinkedListNodeValue) => LinkedList;
+  head: LinkedListNode | null;
+  tail: LinkedListNode | null;
 };
 
-export function LinkedList(this: LinkedList) {
-  this.head = null;
-  this.tail = null;
+export const createLinkedList = (): LinkedList => ({
+  head: null,
+  tail: null
+});
 
-  this.prepend = function(this: LinkedList, value: LinkedListNodeValue) {
-    const newNode = new LinkedListNode(value, this.head);
-    this.head = newNode;
+export const prepend = (value: LinkedListNodeValue, list: LinkedList) => {
+  const newNode = createLinkedListNode(value, list.head);
+  list.head = newNode;
 
-    if (!this.tail) this.tail = newNode;
+  if (!list.tail) list.tail = newNode;
+};
 
-    return this;
-  };
+export const append = (value: LinkedListNodeValue, list: LinkedList) => {
+  const newNode = createLinkedListNode(value);
 
-  this.append = function(this: LinkedList, value: LinkedListNodeValue) {
-    const newNode = new LinkedListNode(value);
+  if (!list.head) {
+    list.head = newNode;
+    list.tail = newNode;
+  }
 
-    if (!this.head) {
-      this.head = newNode;
-      this.tail = newNode;
-
-      return this;
-    }
-
-    this.tail.next = newNode;
-    this.tail = newNode;
-
-    return this;
-  };
-}
+  list.tail.next = newNode;
+  list.tail = newNode;
+};
