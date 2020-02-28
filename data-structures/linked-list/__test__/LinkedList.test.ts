@@ -1,4 +1,4 @@
-import { createLinkedList, append, prepend } from "../LinkedList";
+import { createLinkedList, prepend, append } from "../LinkedList";
 
 describe("Linked List", () => {
   it("should create an empty linked list", () => {

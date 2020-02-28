@@ -1,5 +1,5 @@
 import {
-  createLinkedListNode,
+  createNode,
   LinkedListNodeValue,
   LinkedListNode
 } from "./LinkedListNode";
@@ -15,14 +15,14 @@ export const createLinkedList = (): LinkedList => ({
 });
 
 export const prepend = (value: LinkedListNodeValue, list: LinkedList) => {
-  const newNode = createLinkedListNode(value, list.head);
+  const newNode = createNode(value, list.head);
   list.head = newNode;
 
   if (!list.tail) list.tail = newNode;
 };
 
 export const append = (value: LinkedListNodeValue, list: LinkedList) => {
-  const newNode = createLinkedListNode(value);
+  const newNode = createNode(value);
 
   if (!list.head) {
     list.head = newNode;

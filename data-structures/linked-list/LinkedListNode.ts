@@ -5,7 +5,7 @@ export type LinkedListNode = {
   next?: LinkedListNode;
 };
 
-export const createLinkedListNode = (
+export const createNode = (
   value: LinkedListNodeValue,
   next: LinkedListNode = null
 ): LinkedListNode => ({
