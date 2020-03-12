@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
 const MainStageDynamic = dynamic(
-  () => import("../components/MainStage").then(mod => mod.MainStage),
+  () => import("../vis-components/MainStage").then(mod => mod.MainStage),
   {
     ssr: false
   }

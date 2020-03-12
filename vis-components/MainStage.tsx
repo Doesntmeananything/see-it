@@ -17,8 +17,8 @@ const SpinningRectangle = () => {
   return (
     <Rectangle
       rotation={rotation}
-      x={Math.sin(iter.current) * 100}
-      y={Math.sin(iter.current / 1.5) * 100}
+      x={Math.cos(iter.current) * 100}
+      y={Math.cos(iter.current / 1.5) * 100}
       width={50}
       height={30}
       fill={0xff8008}
