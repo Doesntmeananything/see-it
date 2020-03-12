@@ -32,3 +32,16 @@ export const append = (value: LinkedListNodeValue, list: LinkedList) => {
   list.tail.next = newNode;
   list.tail = newNode;
 };
+
+export const toValuesArray = (list: LinkedList) => {
+  const nodes = [];
+
+  let currentNode = list.head;
+  while (currentNode) {
+    nodes.push(currentNode.value);
+    if (currentNode === currentNode.next) break;
+    currentNode = currentNode.next;
+  }
+
+  return nodes;
+};

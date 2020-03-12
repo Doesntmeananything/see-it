@@ -1,4 +1,9 @@
-import { createLinkedList, prepend, append } from "../LinkedList";
+import {
+  createLinkedList,
+  prepend,
+  append,
+  toValuesArray
+} from "../LinkedList";
 
 describe("Linked List", () => {
   it("should create an empty linked list", () => {
@@ -34,5 +39,18 @@ describe("Linked List", () => {
 
     expect(linkedList.head.value).toBe(1);
     expect(linkedList.tail.value).toBe(2);
+  });
+
+  it("should convert the linked list to an array of node values", () => {
+    const linkedList = createLinkedList();
+    expect(toValuesArray(linkedList).join(",")).toBe("");
+
+    append(2, linkedList);
+
+    expect(toValuesArray(linkedList).join(",")).toBe("2");
+
+    prepend(1, linkedList);
+
+    expect(toValuesArray(linkedList).join(",")).toBe("1,2");
   });
 });
