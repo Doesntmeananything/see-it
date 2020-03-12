@@ -1,12 +1,9 @@
-import dynamic from "next/dynamic";
+import { LinkedList } from "../vis-components/LinkedList";
 
-const MainStageDynamic = dynamic(
-  () => import("../vis-components/MainStage").then(mod => mod.MainStage),
-  {
-    ssr: false
-  }
+const Home = () => (
+  <>
+    <LinkedList />
+  </>
 );
-
-const Home = () => <MainStageDynamic />;
 
 export default Home;
